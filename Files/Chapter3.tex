@@ -1,0 +1,775 @@
+\chapter{Methodology}
+% \newcommand{\sectionbreak}{\clearpage}
+In this section, the design considerations are discussed. A detailed description of how the mobile platform will be actualized is also given. The purpose of the design process was to develop a prototype mobile platform based on caster technology. The design is a representative prototype, tailored based on $10kg$ caster wheels, which means a maximum load of 40kg would be considered for a four-wheel application. This load determines the motor and power transmission system to be applied. 
+
+
+\section{Initial Considerations}
+Since this is a prototype we wanted to achieve some basic minimum requirements for the robot like:
+\begin{enumerate}[i.]
+    \item A total payload weight of $40 kg$
+    \item An average vehicle velocity of approximately $0.5m/s$ adjusted from the speed of an average human being walking of $1.3 m/s$ 
+    \item An operating time of 1hr
+    \item The mobile platform should not be too big and too small, the size of an average delivery box would be ideal. This is should be less than $45cm$ in length, width, and height 
+    \item A mobile application to remotely control the vehicle
+    \item 4 drive motors like normal electric vehicles
+    \item The vehicle should accommodate a maximum incline of 5$^{\circ}$ since testing  will be conducted on a flat surface.
+    \item Desired acceleration of $0.25 m/s^2$
+\end{enumerate}
+
+\section{Platform Design}
+The following design considerations were made in the process of developing the physical structure of the mobile platform:
+\begin{enumerate}[i.]
+    \item Total load
+    \item Material selection
+    \item Ease of assembly and disassembly
+    \item Weight of the platform
+    \item Aesthetics
+    \item Aerodynamics
+\end{enumerate}
+The mobile platform had to be lightweight and simultaneously have the ability to resist bending and compressive stresses. Table \ref{table:materialproperties} below shows the different properties of the various metals that were considered. Aluminium has the lowest mass per cubic meter and has a relatively high yield and tensile strength. It was, therefore, determined to be the best material for the platform.
+
+\begin{table}[H]
+  \begin{center}
+      \leavevmode
+      \hangcaption[Different Material Properties]{Different Material Properties\cite{noauthor_metal_nodate}}
+     \begin{tabular}{| m{3cm} | m{2cm} | m{2cm} | m{2cm} | m{3cm} |}\hline
+      Types of Metals & Tensile Strength (PSI) & Yield Strength (PSI) & Hardness Rockwell (B-Scale) & Density (\(kg/m^3\)) \\
+      \hline
+         Stainless steel   & 90000    & 40000 & 88 & 8000\\
+         \hline
+         Aluminium 6061 & 45000 & 40000 & 60 & 2720\\
+         \hline
+         Steel A36   & 58-80000 & 36000  & - & 7800  \\
+         \hline
+         Titanium & 63000 & 37000 & 80 & 4500 \\
+         \hline
+         Copper & 32000 & 28000 & 10 & 8940 \\
+    \hline
+    \end{tabular}
+
+    \label{table:materialproperties}
+  \end{center}
+\end{table}
+
+The platform design as modeled on the AutoDesk Inventor 3-D modeling software is as shown by figure \ref{fig:newfrontdwg}, figure \ref{fig:newsidedwg} and figure \ref{fig:newtopdwg}:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.9]{Figures/NewFrontDWG.png}
+    \caption{Platform Front and Back Design}
+    \label{fig:newfrontdwg}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.9]{Figures/NewSideDWG.png}
+    \caption{Platform Side Design}
+    \label{fig:newsidedwg}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.9]{Figures/NewTopDWG.png}
+    \caption{Platform Top Design}
+    \label{fig:newtopdwg}
+\end{figure}
+
+Figure \ref{fig:newfrontdwg} represents the front and the back of the platform while figure \ref{fig:newsidedwg} represents the sides of the platform. Figure \ref{fig:newtopdwg} shows the design for the top of the platform. This part will hold most of the load weight. The dimensions were selected to ensure it meets a minimum size for a delivery box, that is, less than 450mm in length, width and height.
+
+The final platform design is as shown in figure \ref{fig:platformdesign}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.8]{Figures/NewRedesignAssemblyParts.png}
+    \caption{Platform Assembly}
+    \label{fig:platformdesign}
+\end{figure}
+
+{\sectionbreak}
+\section{Chassis Design}
+The process of chassis design consists of:
+\begin{enumerate}[i.]
+    \item Load consideration
+    \item Chassis type
+    \item Structural analysis
+\end{enumerate}
+
+A very important consideration for chassis design is the selection of material according to the tensile strength, compressive strength, and torsional strength. The chassis carries the whole load and, therefore, the material selected needs to have high tensile strength. Table \ref{table:materialproperties} above was used to settle on steel as the preferred material. Stainless steel was considered but price was a huge factor in the design process.
+\par
+Other important properties are: elasticity, plasticity, hardness, toughness, dimensional stability, and durability. 
+The design of the chassis has to start with consideration of load cases. The basic load cases to consider are:
+\begin{enumerate}[i.]
+    \item Bending case: loading in vertical plane due to the weight of components distributed along the platform frame which causes bending about the y-axis 
+    \item Torsion case: vehicle body is subjected to a moment applied at the axle center lines by applying upward and downward loads at each axle. These loads result in twisting action or torsion moment about the longitudinal x-axis 
+    \item Combined bending and torsion loads 
+    \item Lateral loading: generated at the tire to ground contact patch. These loads are balanced by centrifugal forces 
+    \item Fore and aft loading: generated when the vehicle accelerates and decelerates inertia forces 
+\end{enumerate}
+
+There are many types of chassis designs each suited to handle the load cases described above. There are ladder frames that carry all load and have good bending strength and stiffness. Other types are cruciform frames which can carry torsional loads. They are made of two straight beams and have only bending loads. The torque tube backbone (tube-frame) frame is made of a closed box section as the main backbone. Traverse beams resist lateral loads and backbone frame bending and torsion. 
+\par
+Considering all these properties, it was determined that a blend of cruciform frames and traverse beams would be most ideal to accommodate all forces. The developed chassis design is as shown by figure \ref{fig:newchassis}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.8]{Figures/NewChassisDWG.png}
+    \caption{Chassis Design}
+    \label{fig:newchassis}
+\end{figure}
+{\sectionbreak}
+\section{Wheel Frame Design}
+The wheel frame was considered part of the platform and similar materials were used for the design. The frame would handle the bulk of the load and therefore a high tensile and yield strength material is required. The wheel frame would also form a housing for the motor, power transmission system, and caster wheel. These had to be considered when modeling the frame, as they have standard dimensions. Most motors have diameters ranging between $25 mm$ and $30 mm$, while their lengths range from $40 mm$ to $70 mm$. The motor selected had a diameter of 25mm and a total length of $45 mm$. The selection criteria for the motor are described in another section of this report. The power transmission system that was selected  was a belt drive with a pulley diameter of $16 mm$. The caster wheel has a standard diameter of $50  mm$.
+
+It was therefore determined that the dimensions of the frame would be a height of $90 mm$, $50 mm$ length, and $50 mm$ width as in Figure \ref{fig:newframe}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale =0.8]{Figures/NewFrameDWG.png}
+    \caption{Wheel Frame Design}
+    \label{fig:newframe}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.8]{Figures/WheelAssembly.png}
+    \caption{Wheel Assembly}
+    \label{fig:wheelassembly}
+\end{figure}
+
+{\sectionbreak}
+The final wheel frames on chassis assembly is as shown in figure \ref{fig:chassiswheel}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.8]{Figures/NewFinalAssemblyDWG.png}
+    \caption{Wheel Frame on Chassis Design}
+    \label{fig:chassiswheel}
+\end{figure}
+
+\section{Power Transmission}
+The purpose of the design is to show that applying a certain amount of power to a castor wheel can do useful work and move a load, regardless of the weight. The necessary power will come from a \ac{DC} motor shaft and a power transmission system will be required to transmit power to the wheel shaft. After considering several power transmission systems, including gear drives, chain drives, and belt drives, it was determined that the latter would be most ideal for the following reasons \cite{khurmi_textbook_2005}:
+\begin{enumerate}[i.]
+    \item There would be a center distance between the motor and wheel shafts, a distance that would require several gears to fill making the design bulky. This eliminates gears as a means of transmission
+    \item  The design does not require speed reduction which eliminates gear drives
+    \item Belt drives require less maintenance than chain drives, for example, lubrication
+    \item Belt drives are lighter than chain drives and gear drives, and given that the weight of the platform is one of the main design considerations, belt drives were the more preferred choice
+\end{enumerate}
+
+\subsection{Selection of a Belt Drive}
+The following factors were considered when selecting a belt drive:
+\begin{enumerate}[i.]
+    \item The speed of the driving and driven shafts
+    \item Speed reduction ratio
+    \item Power to be transmitted
+    \item Center distance between shafts
+    \item Positive drive requirements
+    \item Wheel frame dimensions
+\end{enumerate}
+
+An open belt drive is a more preferred choice than a cross belt drive due to the significantly shorter belt length. Furthermore, the belt will be made out of rubber as the material has a high load-carrying capacity compared to other belt materials. Rubber also has a long service life. The pulley material, in this case, is cast iron, and therefore the coefficient of friction between the two materials is 0.32 \cite{noauthor_pulley_nodate}.
+
+\subsection{Speed of the driving and driven shafts}
+This was going to be a low-speed application of DC motors on castor wheels which eliminated the need for any form of speed reduction. The speed reduction ratio (also the velocity ratio) is one which means that both pulleys have the same diameter. 
+
+Velocity ratio:
+%\ref{eq:3}:
+\begin{equation}
+\label{eq:3}
+    \frac{N_2}{N_1} = \left(\frac{d_1}{d_2}\right)
+\end{equation}
+
+where: 
+\begin{itemize}
+\item \(d_1\)  is the diameter of the driver pulley
+\item \(d_2\)  is the diameter of the driven pulley
+\item \(N_1\)  is the speed of the driver pulley in rpm
+\item \(N_2\)  is the speed of the driven pulley in rpm
+\end{itemize}
+
+Given that the the velocity ratio is equal to 1, \(N_1\) = \(N_2\) and \(d_1\) = \(d_2\)
+
+\subsection{Center Distance between shafts}
+This parameter determines the length of the belt. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{Figures/NewPulley.png}
+    \caption[Center distance]{Center distance\cite{noauthor_pulley_nodate}}
+    \label{fig:centerdistance}
+\end{figure}
+
+The center distance is dependent on the diameters of the motor and the wheel. To make the wheel assembly design more compact, the center distance was determined to be $45mm$. The diameter of the pulleys had to be determined based on bore diameter. The bore diameter is consequently dependent on the standard wheel and motor shafts diameter. These diameters are both $5mm$ and the industry-standard outside diameter for a pulley with a 5mm bore diameter ranges from $9.68mm$ to $37.69mm$. The industry standard is 2GT synchronous pulleys and as such was used to select pulley dimensions. Again, to make the wheel assembly design more compact, an outside diameter of $16mm$ was selected for the pulley design. 
+\par
+Length of belt:
+\begin{equation} \label{eu_eqn}
+L = \frac{\pi}{2}(d_1 + d_2) + 2C + \frac{(d_1 + d_2)^2}{4C}
+\end{equation}
+
+where: 
+\begin{itemize}
+\item L is the total length of the belt
+\item \(d_1\)  is the diameter of the driver pulley
+\item \(d_2\)  is the diameter of the driven pulley
+\item C is   is the center distance of the shaft
+\end{itemize}
+
+Based on the parameters established above, the total length of the belt is: 
+Length of belt:
+\begin{equation} \label{eu_eqn}
+    \begin{aligned}
+        L &= \frac{\pi}{2}(16 + 16) + 2*45 + \frac{(16 + 16)^2}{4*45}\\
+        L& = 146
+    \end{aligned}
+\end{equation}
+
+\subsection{Arc of Contact}
+
+The angle of contact between the belt and pulleys as shown in Figure \ref{fig:centerdistance} is given by:
+\begin{equation} \label{eqn4}
+    \begin{aligned}
+        &\theta_{\mathrm{d}}=\pi-2 \sin ^{-1} \frac{D-d}{2 C} \\
+        &\theta_{\mathrm{D}}=\pi+2 \sin ^{-1} \frac{D-d}{2 C}
+    \end{aligned}
+\end{equation}
+
+
+Since the pulleys have an equal diameter, the angle of contact of the belt on both pulleys is 90$^{\circ}$  or 1.57 radians.
+
+\subsection{Power Transmitted}
+The driving pulley pulls the belt from one side and delivers it to the other side. It is thus obvious that power is required. Power transmitted by a belt drive:
+\begin{equation}
+    Power = (T_1 + T_2)v
+\end{equation}
+
+where:
+\begin{itemize}
+    \item \(T_1\) is the belt tension in the tight size (N)
+    \item \(T_2\) is the belt tension in the slack side (N)
+    v is the belt speed. Maximum drive speed is 0.5\(m/s^2\)
+\end{itemize}
+
+Assuming that the friction is uniform throughout the arc of contact and ignoring centrifugal effects, the ratio of the tensions in the belts can be modeled by Eytlewein’s formula:
+\begin{equation}
+    \frac{T_1}{T_2} = e^{\mu \theta}
+\end{equation}
+
+where:
+\begin{itemize}
+    \item \(\theta\) is the angle of contact
+    \item \(\mu\) is the coefficient of friction
+\end{itemize}
+
+The maximum allowable tension, \(T_{1,max}\), on the tight side of a belt depends on the allowable stress, \(\alpha_{max}\), of the belt material in this case rubber. 
+\begin{equation}
+    T_{1, max} = \alpha_{max}A
+\end{equation}
+
+where:
+\begin{itemize}
+    \item A is the cross-sectional area of the belt, i.e., \begin{equation}
+        A = bt
+    \end{equation}
+    \item b is the belt width
+    \item t is the belt thickness
+\end{itemize}
+
+For standard 2GT synchronous pulleys, the maximum tooth width is 11mm and maximum thickness is 1.8mm.
+The maximum allowable stress for rubber is 5MPa.
+\par
+Therefore:
+\begin{equation}
+    \begin{aligned}
+         T_{1,max}& =5*10^6*\frac{11}{1000}*\frac{1.8}{1000}\\
+         & = 99N
+    \end{aligned}
+\end{equation}
+Given that:
+
+\begin{equation}
+    \begin{aligned}
+       \frac{T_1}{T_2}&= e^{\mu\theta},
+        and\  
+        T_1 = 99N,   \mu =0.32,  \theta= 1.57 radians\\
+        T_2 &= 61.81N
+    \end{aligned}
+\end{equation}
+
+Power transmitted by the belt drive:
+\begin{equation}
+    \begin{aligned}
+        P &= (T_1 + T_2)v \\
+        P &= (T_1 + T_2)*0.5\\
+        P &= 80.4W
+    \end{aligned}
+\end{equation}
+Torque transmitted by the belt drive:
+\begin{equation}
+    \begin{aligned}
+        T &= (T_1 + T_2)r\\
+        T &= (T_1 + T_2)\frac{8}{1000}\\
+        T &= 1.28Nm
+    \end{aligned}
+\end{equation}
+
+{\sectionbreak}
+\subsection{Bearing Selection}
+Ball bearings have standardized dimensions based on an international basis. The bearings are designated by a number. In general, the number consists of at least three digits. Additional digits or letters are used to indicate special features e.g. deep groove, filling notch, etc. The last three digits give the series and the bore of the bearing. The last two digits from 04 onwards, when multiplied by 5, give the bore diameter in millimeters.
+Table \ref{table:bearingtable} shows the principal dimensions for radial ball bearings\cite{khurmi_textbook_2005}.
+
+\begin{table}[h]
+  \begin{center}
+    \leavevmode
+    \hangcaption[Comparison between different bearings]{Comparison between different bearings}
+    \begin{tabular}{|c|c|c|c|}\hline
+    Bearing No. & Bore (mm) & Outside Diameter (mm) & Width (mm) \\\hline
+    200
+    300 & 10 & 30
+    35 & 9
+    11 \\\hline
+    201
+    301 & 12 & 32
+    37 & 10
+    12 \\\hline
+    202
+    302 & 15 & 35
+    42 & 11
+    13 \\\hline
+    203
+    303
+    403 & 17 & 40
+    47
+    62 & 12
+    14
+    17 \\\hline
+    204
+    304
+    404 & 20 & 47
+    52
+    72 & 14
+    14
+    19 \\\hline
+    205
+    305
+    405 & 25 & 52
+    62
+    80 & 15
+    17
+    21 \\\hline
+    .
+    .
+    . & .
+    .
+    . & .
+    .
+    . & .
+    .
+    . \\\hline
+    217
+    317
+    417 & 85 & 150
+    180
+    210 & 28
+    41
+    52 \\\hline
+    218
+    318
+    418 & 90 & 160
+    190
+    225 & 30
+    43
+    54 \\\hline
+    \end{tabular}
+    \label{table:bearingtable}
+  \end{center}
+\end{table}
+
+
+\par
+The load carried by a rotating bearing is called a dynamic load. In order to select the most suitable ball bearing, the basic dynamic radial load is calculated and then multiplied by the service factor (k) to get the design basic dynamic radial load capacity. 
+The approximate service life of a ball bearing is based on the fundamental equation\cite{khurmi_textbook_2005}:
+\begin{equation}
+    L= \frac{c}{w}^k * 10^6 revolutions
+\end{equation}
+or
+\begin{equation}
+    L = W * \frac{L}{10^6}^{\frac{1}{k}}
+\end{equation}
+where:
+\begin{itemize}
+    \item L = rating life
+    \item C = basic dynamic load rating
+    \item W = equivalent dynamic load
+    \item k = 3, for ball bearings and \(\frac{10}{3}\) for roller bearings
+\end{itemize}
+
+\par
+The relationship between the life in revolutions (L) and the life in working hours (LH) is given by L =60N.\(L_H\) revolutions  where N is the speed in r.p.m.
+After finding the design basic dynamic radial load capacity, the selection of bearing is made from the catalog of a manufacturer. These load capacities are also standardized for international application.
+
+\par
+Based on these standard dimensions and load capacities, and considering that the design defines a light load application, the bearing selected lies between class 201-204. The specific bore diameter rating depends on the availability of the bearing in the market, and a 12mm bore diameter bearing would be easier to find in the market. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale= 0.8]{Figures/BearingDWG.png}
+    \caption{Bearing Design}
+    \label{fig:bearing}
+\end{figure}
+
+{\sectionbreak}
+\section{Joining Methods}
+The design described in this paper has several parts that require to be joined together. These parts are made of sheet metal and several types of joints were considered, including:
+
+\begin{enumerate}[i]
+    \item Screw joints
+    \item Rivet joints
+    \item Welded joints
+    \item Folding/Tab joints
+    \item Adhesive joints
+\end{enumerate}
+
+The screw joint is a type of a temporary joint. Screws, bolts, nuts, studs and standoff are used for fastening sheet metal parts. Machine screws and self tapping screws are the two types of screws commonly used. Self tapping screws are a low-cost solution for a one time assembly of parts. Machine screws, on the other hand, are suitable for applications where multiple assemblies and disassembly are required \cite{admin_how_2018}. It was therefore determined to be the most suitable joining technique for the design. Screws are additionally the best choice for softer materials such as aluminium.
+\par
+The rivet joint is a simple, convenient and fast joining technique. However, it requires applications where disassembly is not an option since it is a permanent joining technique. It was therefore determined to be unsuitable for this particular design.
+\par
+Welding is also a permanent joining technique. Several techniques are used for joining sheet metal parts including arc welding, gas welding and tungsten inert welding. Several considerations need to be made when applying this method, such as:
+\begin{enumerate}[i]
+    \item Sheet metal material
+    \item Sheet metal thickness
+    \item Final finish requirements
+    \item Airtight or waterproof requirements
+\end{enumerate}
+
+The sheet metal material used in the design is aluminium, which has a low melting point of 660$^{\circ}$ \cite{noauthor_aluminium_nodate}  that would be unsuitable when joining using an arc weld. The sheets would melt before a joint was formed. The parts in the design will have a  metal thickness of $2mm$, which is unsuitable for welding since welding thin metals can cause warping and burn-through. Welded joints have a poor surface finish, and since aesthetics are a main consideration in the design process, welding would be ill-suited for joining the parts.
+\par
+Folding or bending tabs are an economical way of making permanent sheet metal joints. They are accomplished using sheet metal bending machines, therefore requires very little hardware setup. Tab joints are suitable for soft material such as aluminium. Adhesive joints are a type of permanent joint where adhesives are placed between the part surfaces and then pressure is applied. To disassemble the parts, chemicals can be applied which is not economical especially for small applications. 
+\par
+Having considered several joining techniques, screws or fasteners were resolved to be most suitable for the design and ultimately fabrication of the mobile platform. 
+
+\section{Motor Sizing}
+
+The motor is responsible for supplying the drive to the transmission system responsible for the movement of the robot. There are numerous motor types that can be used in robotic applications. Each type of motor serves a distinct purpose. The motors help the robot move and act as actuators in the mechanical design of the robot. Since this is a mobile robot with a small payload size, \ac{AC} motors are ruled out. The remaining \ac{DC} motors used for locomotion are:
+\begin{enumerate}[i.]
+    \item Brushed \ac{DC} motors use brushes to conduct current between the source and the armature. There are several types of brushed \ac{DC} motors, but permanent magnet \ac{DC} motors are used in robotics. These motors have a high torque-to-inertia ratio. Brush \ac{DC} motors are capable of producing torque three to four times greater than their rated torque.The brush \ac{DC} motors have two terminals. When a voltage is applied across the two terminals, a proportional speed is an output to the brush \ac{DC} motor's shaft.
+
+    \item Brushless \ac{DC} motors are built similarly to brushed \ac{DC} motors, but they are controlled by closed-loop controllers and require inverters or \ac{SMPS} for power. Permanent magnets rotate a fixed armature in these motors. Unlike Brush \ac{DC} motors, they have a closed-loop electronic controller instead of a commutator assembly. These motors are typically used in industrial robotics where precise motion and positioning control are required. These motors, however, are quite expensive and involve complex construction and electronics.
+
+    \item Geared \ac{DC} motors are a more advanced version of brush \ac{DC} motors. A gear assembly is attached to the motor. The motor's speed is reduced as the torque increases thanks to the gear assembly. The speed of the \ac{DC} motor can be reduced while increasing torque by using the proper combination of gears to the motor. This ensures that the motor rotates steadily and that it can be stopped or changed the speed in a controlled manner. \ac{DC} motors operate within a specific voltage range, and the higher the input voltage, the higher the \ac{RPM}.
+\end{enumerate}
+
+When selecting the right motor to use in this application, a motor that could be able to provide us with high torque of approximately $1 Nm$ to be able to carry a payload of $40 kg$ at a low speed is considered. The operating voltage as it has a direct correlation with the power we can draw from the battery, thus influencing the capacity of our battery is also considered. Cost and availability should be top priorities. A geared \ac{DC} motor is selected as shown in Table \ref{table:comparedifferentmotrs}.
+
+\begin{table}[ht]
+  \begin{center}
+    \leavevmode
+    \hangcaption[Comparison between different motors]{Comparison between different motors}
+    \begin{tabular}{|c|c|c|c|}\hline
+    Parameters & Brushed \ac{DC} motors & Brushless \ac{DC} motors & Geared \ac{DC} motors \\\hline
+    Speed & Fast & High & Low \\\hline
+    Torque & Low & Low & High \\\hline
+    Cost & Inexpensive & Expensive & Inexpensive \\\hline
+    Availability & Available & Available & Available \\\hline
+    Operating Voltage & $6 V$ - $12 V$ & $12 V$ & $6 V$ - $12 V$ \\\hline
+    Lifetime & Short & Long & Short \\\hline
+    Efficiency & Low & High & Low \\\hline
+    Noise & High & Low & Low \\\hline
+    \end{tabular}
+    \label{table:comparedifferentmotrs}
+  \end{center}
+\end{table}
+
+Some of the design considerations that are considered in the process of selecting the specific \ac{DC} motors are:
+\begin{enumerate}[i.]
+    \item  Nominal Voltage. The higher the voltage, the better as less current will be needed to supply the electrical power to the motors. A $6 V$ motor will draw twice as much current as a $12 V$ motor for the same application 
+    \item No Load \ac{RPM} and full load \ac{RPM}
+    \item Stall current and Stall torque - The system ought to be designed to never allow the motor to come anywhere near this point, This can done by ensuring the motor operated at at least 30\% of the stall torque.
+    \item Gear down - This helps to achieve the required torque at the output of the shaft and allows the transmission unit to run at a gear ratio of 1:1. The output speed is reduced to a manageable level while the torque is increased.
+    \item Rotary encoders. This would be a great addition, but to find a geared \ac{DC} motor with the rotary encoder attached to it is difficult.
+\end{enumerate}
+
+The torque required by the motor is determined as follows based on Figure \ref{fig:simpletorque}:
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5]{Figures/simpleTorque.png}
+    \caption{Simple Torque Representation On an Inclined Surface}
+    \label{fig:simpletorque}
+\end{figure}
+
+From Figure \ref{fig:simpletorque} with a $5^{\circ}$ inclined surface, only one component of its weight, $mg_x$ parallel to the surface, causes the robot to move downwards. The other component, $mg_y$, is balanced by the normal force the surface exerts on the wheels. $mg_x$ is calculated as shown by Equation \ref{mgxcalculations} and $mg_y$ is calculated as shown by Equation \ref{mgycalculations}
+
+
+\begin{equation} \label{mgxcalculations}
+\begin{split}
+mg_x & = mg * sin (\theta) \\
+& = 45 * 9.81 * sin (5) \\
+& = 38.4749 N 
+\end{split}
+\end{equation}
+
+\begin{equation} \label{mgycalculations}
+\begin{split}
+mg_y & = mg * cos (\theta) \\
+& = 45 * 9.81 * cos (5) \\
+& = 439.7701 N
+\end{split}
+\end{equation}
+
+
+For the robot not to slide down the incline, there must be friction between the wheel and the surface. 
+The torque (T) required is given by equation \ref{torqueeqn}.
+
+\begin{equation} \label{torqueeqn}
+T = f * R
+\end{equation}
+
+To select the proper motor, we must consider the "worst-case scenario," where the robot is not only on an incline but accelerating up it.
+Note now that all forces ($F$) are along the x and y axes. We balance the forces in the x-direction as shown by equation \ref{balanceforces}
+
+\begin{equation} \label{balanceforces}
+\begin{split}
+F_x & = m * a  \\
+& = f - m g_x \\
+& = \frac{T}{R} - m g_x
+\end{split}
+\end{equation}
+
+% \begin{flushleft} \label{balanceforces}
+
+% \end{flushleft}
+
+\begin{equation} \label{totaltorqueeqn}
+T = R * M *( a + g * sin(\theta))
+\end{equation}
+
+This torque given by equation \ref{totaltorqueeqn} value represents the total torque required to accelerate the robot up an incline. However, this value must be divided by the total number ($N$) of drive wheels to obtain the torque needed for each drive motor. The final point to consider is the efficiency ($e$) of the motor, gearing, and wheel (slip). This results to the torque required by each wheel as shown by equation \ref{totaltorqueeqnwithefficiency}
+
+\begin{equation} \label{totaltorqueeqnwithefficiency}
+T = \frac{100}{e} * \frac{R * M *( a + g * sin(\theta))}{N}
+\end{equation}
+
+The value for efficiency here represents the total efficiency, as shown by equation \ref{totalefficiency}, of the system and can be estimated as follows:
+\begin{itemize}
+    \item Battery to Motor Controller: 90\% efficient
+    \item Motor Controller to Motors: 70\% efficient
+    \item Transmission to Wheels 80\% efficient
+\end{itemize}
+The lost energy is transferred mostly to heat and noise.
+
+\begin{equation} \label{totalefficiency}
+\begin{split}
+e & = 0.9 * 0.7 * 0.8 \\
+& = 50.4\% \\
+\end{split}
+\end{equation}
+
+With a total efficiency of the system as $50.4\%$ torque required by each wheel is calculated as shown in equation \ref{totaltorque}.
+
+\begin{equation} \label{totaltorque}
+\begin{split}
+T & = \frac{100}{50.4} * \frac{0.015 * 45  *( 0.25 + 9.81 * sin(5))}{4} \\
+& = 0.37 Nm \\
+\end{split}
+\end{equation}
+
+With this a motor of $12V$ $250$ \ac{RPM} \ac{DC} motor of $0.8629 N/m$ in torque can suffice for this operation. This motor can provide the required torque for this application but the Speed will be reduced to $0.3927 m/s$ as shown by equation \ref{speedmpers} which is not far off from the expected $0.5 m/s$.
+
+\begin{equation} \label{speedRadians}
+w = \frac{2 * \pi * N}{60}
+\end{equation}
+
+\begin{equation} \label{speedmpers}
+\begin{split}
+v & = r * w\\
+& = 0.015 * \frac{2 * \pi * 250}{60} \\
+& = 0.3927 m/s 
+\end{split}
+\end{equation}
+
+The total power ($P$) per motor can be calculated using the following relation:
+
+\begin{equation} \label{totalefficiency}
+\begin{split}
+P & = T * w\\
+& = 0.37 * \frac{2 * \pi * 250}{60} \\
+& = 9.6866W 
+\end{split}
+\end{equation}
+
+\begin{equation} \label{totalefficiency}
+\begin{split}
+I & = \frac{P}{V}\\
+& = \frac{9.6866 W}{12 V} \\
+& = 0.8072 A
+\end{split}
+\end{equation}
+
+
+The maximum current that id drawn from a battery is $0.4843A$ to be supplied to the motors.
+
+Finally, the capacity ($C$) of the battery pack required can be estimated using the equation \ref{batterycap}:
+
+\begin{equation} \label{batterycap}
+\begin{split}
+C & = I * t\\
+& = 0.8072 * 1 \\
+& = 0.8072Ah \\
+& = 0.8072 * 8 \\ 
+& = 3.2288 Ah \\
+\end{split}
+\end{equation}
+
+With a $3.2 Ah$ battery the motors will be able to run the mobile platform for 1hr without recharging.
+
+\section{Motor Control}
+
+A \ac{DC} motor controller is any device that can manipulate the position, speed, or torque of a \ac{DC}-powered motor. Control of the speed and rotation of the \ac{DC} motor is critical. The speed/torque curve of \ac{DC} motors is inversely linear, meaning their torque proportionally decreases as the motor \ac{RPM} increase. This allows for easy control, as lowering the speed will increase the torque, and vice versa.
+
+\subsection{Direction Controller: H Bridge}
+
+A H bridge circuit is one of the simplest methods to control a \ac{DC} motor. There are four switches controlled in pairs (1 \& 4, 2 \& 3) as shown in Figure \ref{fig:directionControl}, and when either of these pairs is closed, the circuit is completed and the motor is powered. Depending on the orientation of the motor when 1 \& 4 are closed the motor move clockwise while when 2 \& 3 are closed the motor moves anticlockwise.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.2]{Figures/DirectionControl.jpg}
+    \caption[Direction Control]{Direction Control \cite{noauthor_all_nodate}}
+    \label{fig:directionControl}
+\end{figure}
+
+A four-quadrant motor can thus be created by connecting certain switches, the polarities of which change to produce different effects on the motor as shown in Figure \ref{fig:4quadrantops}. This circuit essentially switches the leads of the DC motor, which will reverse its rotational direction on command. Most DC motors are slowed by simply cutting power to the motor; regenerative drives include braking capabilities, which cause deceleration by switching polarities while the motor is running. Non-regenerative drives control quadrants 1 and 3, which are considered "motoring" quadrants because the motor provides acceleration in either direction. Quadrants 2 and 4 are considered "braking" quadrants because the motor is decelerating and is used by regenerative drives. When the motor speed opposes the motor torque, the motor transforms into a generator, and its mechanical energy drives a current back to the power source (a process known as "regenerative braking"). This feature reduces energy losses and allows the power source to be recharged, effectively increasing motor efficiency.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.3]{Figures/4Quadrant.jpg}
+    \caption[4 Quadrant Operation]{4 Quadrant Operation \cite{noauthor_all_nodate}}
+    \label{fig:4quadrantops}
+\end{figure}
+
+\subsection{Speed Controller: Pulse Width Modulation (PWM)}
+
+PWM circuits control motor speed by simulating a change in supply voltage. Adjustable speed drive controllers send periodic pulses to the motor, which, when combined with the smoothing effect of coil inductance, causes the motor to behave as if it is powered by a lower/higher voltage. The percentage of voltage reduction, or the PWM "duty cycle," will thus affect the motor's speed. PWM is simple and inexpensive to implement, and virtually Any duty cycle can be selected, allowing for almost continuous motor speed control. PWM is frequently used in conjunction with H bridges to control speed, direction, and braking.When the duty cycle is reduced to one quarter of the total time, the effective voltage is about one quarter of the total voltage.
+Some of the factors that were considered when choosing a motor driver were:
+
+\begin{enumerate}[i.]
+    \item Ability to both control speed and rotations
+    \item The higher the number of motor output the better
+    \item The operating voltage should be inclusive of our motor voltage of 12V.
+    \item The higher the efficiency the better. \ac{MOSFET} controlled drivers have a higher efficiency that \ac{BJT}.
+    \item A small form factor would be better
+    \item Maximum current it can supply to the motors should be approximately 1A needed generate our required torque of $0.37 N m$
+\end{enumerate}
+% REF 
+The Satima S2 motor driver was best suited for this application. This is because it can operate our 12V motor voltage, can supply up to a maximum of 3A per channel and High-Noise-Immunity Inputs. All in all it is \ac{MOSFET} controlled making it to have a higher efficiency.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{Figures/MPmotorDriver.png}
+    \caption{Motor Driver Schematic}
+    \label{fig:motordriverschematic}
+\end{figure}
+
+Figure \ref{fig:motordriverschematic} shows the Motor Driver Part of the Mobile Platform. There are 8 motors controlled by 4 motor drivers which can be able to control 2 motors per motor driver. The Connectors are JST connectors as the are strong and reliable.
+The mounting holes are connected to ground as they will be screwed on to the platform.
+
+\section{Remote Control Clients}
+
+\ac{API} are code snippets that allow software applications to communicate in a common language and are becoming increasingly common in today's consumer and business environments. Web APIs enable client applications to access third-party data and seamlessly integrate it wherever and whenever it is needed, providing unrivalled data processing efficiencies and cost savings.
+
+\ac{API} offer scalability, extended Reach, 3rd party integrations, speed, simplicity and customization. As shown by figure \ref{fig:omicronplatformcontrol} the goal is to abstract the robot control using an \ac{API}. This will ensure the building of different client applications to control the robot. A hand motion control, a hardware interface, and a mobile application, a software interface, will be the applications built to control the robot.
+
+The \ac{API} will be abstracted on the internet as a Website Application Server. This will route traffic to the mobile platform through \ac{MQTT}. The protocol is event-driven and uses the publish/subscribe (Pub/Sub) pattern to connect devices. Topics are used to communicate between the sender (Publisher, Web \ac{API}) and the receiver (Subscriber, Mobile Platform). The \ac{MQTT} broker manages the connection between them. All incoming messages are filtered by the \ac{MQTT} broker. The WiFi client will send the data to the main CPU for processing. The \ac{COAP} was not used as its support is low in hobbyist market and it is more suited for industrial applications.
+
+Figure \ref{fig:omicronplatformcontrol} shows how the architecture will be laid out. Having different clients that can be abstracted by the Web Application increase the type of control mechanisms used to control the robot. For this, hand motion control and mobile application control will be demonstrated as examples of both hardware and software control mechanisms.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{Figures/omriconrobotPlatformControl.jpg}
+    \caption{Mobile Platform Architecture}
+    \label{fig:omicronplatformcontrol}
+\end{figure}
+
+\subsection{Hand Motion}
+
+This is a hardware client that maps hand motion to actual commands to be sent to the mobile platform. The working of the hand motion control is demonstrated by figure \ref{fig:handmotioncontrol}. When a user emulated a recognised hand motion we will decode it to a form that the mobile platform can understand then send it to the mobile platform. We don't need to know the actual hand motions as with a fuzzy controller we are able to map any input to match the mobile platform specified motions.
+
+The hand motion as shown by figure \ref{fig:handmotionschematic} will constitute mainly of an Inertial Measuring Sensor to detect the different hand motions. The Central Processing Unit will interpret the motions and transmit the command wireless to the mobile platform.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{Figures/linefollowing-handmotion.jpg}
+    \caption{Hand Motion Control Strategy}
+    \label{fig:handmotioncontrol}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{Figures/HMSchematic.png}
+    \caption{Hand Motion Schematic}
+    \label{fig:handmotionschematic}
+\end{figure}
+
+\subsection{Mobile Application}
+
+This is a software client that maps input from the application to actual commands to be sent to the mobile platform. For the mobile platform the best implementation is currently based on Flutter framework and Dart Language. Flutter is an open source framework by Google for building beautiful, natively compiled, multi-platform applications from a single code base. Features are created from widgets which are simple to design allowing for speedy development.
+Figure \ref{fig:handmotionmobileapp} shows the process of how the mobile application will be working.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{Figures/linefollowing-mobileapp.jpg}
+    \caption{Mobile application Strategy}
+    \label{fig:handmotionmobileapp}
+\end{figure}
+
+\section{Electronics}
+
+This is the brain of the mobile platform and is responsible in converting the user input to motor rotation and translational values. The main compute platform is responsible in controlling the motors individually to achieve holonomic control. Though automobiles have coupled mechanics to drive the wheels, we will ensure that the motors are coupled through the software for synchronised motion.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{Figures/MPmain.png}
+    \caption{Mobile Platform Main Schematic View}
+    \label{fig:mobileplatformmain}
+\end{figure}
+
+
+The considerations that went into selecting the microcontroller were:
+\begin{enumerate}[i]
+    \item It should be compatible with all auxilliary components including the motor and the inertial measuring sensor
+    \item It should have on board features such as integrated Wi-Fi support and USB port
+    \item It should have enough processing power to reduce latency during operations such as wireless communication.
+    \item Its memory should be enough to accommodate the written program with all of its functionality.
+    \item It should have the desired number of GPIO pins.
+\end{enumerate} 
+
+\par
+The STM32 and Arduino microcontrollers were considered as they are the most common and prevalent in the market. The STM32 microcontroller, more specifically STM32F103C8T6 was chosen as main microcontroller unit \ac{MCU}, and the main deciding factor was the number of pins on the \ac{MCU}. It has 40 pins which would comfortably accommodate the more than 24 pins required to operate eight \ac{DC} motors.
+\par
+For the Wi-Fi client, the ESP-12f was chosen. This module supports the standard IEEE802.11 b/g/n protocol, a complete
+TCP/IP protocol stack. It adds networking capabilities to existing devices and can be used to build separate network controllers. It is also highly cost effective compared to other modules such as ESP32.
+
+\par
+Figure \ref{fig:mobileplatformmain} also shows the circuitry for the power unit. In order to operate the mobile platform for at least an hour, a high capacity (greater than 900mAH) power source that can be recharged was the desired supply for the platform. Looking across the market, the 18650 Lithium Ion Battery 2200mAh 3.7V was selected as most suitable for the job.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{Figures/MPsensory.png}
+    \caption{Mobile Platform sensory schematic}
+    \label{fig:mobileplatformsensory}
+\end{figure}
+
+\par
+An Inertial Measurement Unit, also known as \ac{IMU}, is an electronic device that measures and reports acceleration, orientation, angular rates, and other gravitational forces. It is composed of 3 accelerometers, 3 gyroscopes, and depending on the heading requirement – 3 magnetometers. That is to say, one per axis for each of the three vehicle axes: roll, pitch, and yaw.
+
+There are different types of \ac{IMU} sensors \cite{noauthor_imu_nodate}: the one based on FOG (Fiber Optic Gyroscope), the RLG \ac{IMU}s (Ring Laser Gyroscope), and lastly, \ac{IMU} based on MEMS technology (Micro Electro-Mechanical Systems). This technology allows lower costs and low power requirements while ensuring performance. MEMS-based systems therefore combine high performance and ultra-low power in a smaller unit.
+\par
+The \ac{IMU} selected for this particular application is the MPU6050 sensor module which is a complete 6-axis Motion Tracking Device. It combines 3-axis Gyroscope, 3-axis Accelerometer and Digital Motion Processor all in small package\cite{noauthor_mpu6050_nodate}. It also has additional feature of on-chip temperature sensor. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{Figures/MPU6050_Module.png}
+    \caption{MPU6050 Sensor Module}
+    \label{fig:my_label}
+\end{figure}
+
+% \section{Software Architecture}
+

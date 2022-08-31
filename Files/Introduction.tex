@@ -1,0 +1,43 @@
+\chapter{Introduction}
+\newcommand{\sectionbreak}{\clearpage}
+
+\label{sec:introduction}
+\section{Background}
+Mobile robots are increasingly being used in non-industrial applications such as military, disaster relief, and home automation. One way to classify mobile robots is based on their type of motion, which can be either holonomic or non-holonomic. Holonomic mobile vehicles have the advantage of being controllable by degrees of freedom equal to the mobile robot's total degrees of freedom. A mobile robot classified as omnidirectional, on the other hand, can change the direction of motion without performing intermediate rotation steps and can move in all directions from a given starting point while simultaneously rotating. This project will attempt to apply the concepts of omnidirectional and holonomic motion to a set of wheels in order to create a mobile platform with industrial applications. The wheels under consideration are castor wheels, which are commonly found in homes, industrial plants, warehouses, and other large objects that require mobility.
+
+\section{Problem statement}
+
+Mobile robots and platforms have found widespread use in homes and other non-industrial settings. These vehicles are mostly unmanned and are controlled remotely. This technology can be used in the industrial application of casters. On the other side, casters are used on the warehouse or factory floor to move heavy and large objects. This is a manual process in which the operator physically pushes the caster around. The next step is to remove manual control and remotely control the caster wheels.
+\par
+Despite this being the obvious next step, caster wheels in the industry currently require manual control. Casters require an initial push force to begin rolling. Other applications of caster wheels such as shopping trolleys and hospital beds also require manual control. 
+\par
+The current implementation of caster wheels defies the trends in technological innovation being observed in the world. Maintaining manual control on casters is less efficient compared to an automated version. Furthermore, labourers get tired easily when pushing the heavy casters around especially due to difficulty in maintaining the correct swivelling. The need, therefore, arises to develop a controllable version of castor wheels so that the process can be automated.
+
+\section{Objectives}
+
+\subsection{Main objective}
+
+To design and fabricate a prototype mobile platform capable of omnidirectional and holonomic motion.
+
+\subsection{Specific objectives}
+
+\begin{enumerate}
+	\item To design and build a mechanical chassis and frame that will hold the wheels, power transmission unit and carry the load respectively \vspace*{.2cm}
+	\item To design and construct a power transmission that transmits power from the motor to the wheel shaft unit\vspace*{.2cm}
+	\item To design a \ac{DC} motor control circuit for individual caster wheels\vspace*{.2cm}
+	\item To develop  algorithms to control the motors and achieve simultaneous holonomic motion from the caster wheels and remotely control the mobile platform\vspace*{.2cm}
+	
+\end{enumerate}
+
+\section{Justification of the study}
+The apparent availability of low-cost and easily accessible technologies that bridge the gap between nonholonomic and holonomic motion control motivates us to conduct this research. Navigation to and from tight spaces is possible with holonomic motion. Furthermore, developing a low-cost holonomic mobile platform in the field of mobile robots, particularly in Sub-Saharan Africa, aligns with one of the \ac{UN} \ac{SDG} goals of infrastructure development, inclusive and sustainable industrialisation, and innovation \cite{noauthor_goal_nodate}.
+This is where the world is going, and it is only natural for us to try to follow suit.
+
+\section{Expected Outcomes}
+At the end of the design process, we expect to come up with the following:
+\begin{enumerate}
+    \item A mobile platform that can move a maximum payload of $40kg$
+    \item A mobile platform that can move in any direction without whilst carrying a load
+    \item A hand motion controller that can be able to control the mobile platform remotely
+    \item A mobile application that can be able control the mobile platform remotely
+\end{enumerate}
